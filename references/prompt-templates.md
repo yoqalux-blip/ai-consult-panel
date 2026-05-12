@@ -21,7 +21,7 @@ Constraints and forbidden claims/actions:
 [insert privacy limits, methodology limits, style limits, budget/quota limits, and claims/actions to avoid]
 
 Allowed model capabilities:
-[insert standard chat / reasoning / research or deep research / image generation / Pro mode limits]
+[insert standard chat / reasoning / research or deep research / image generation / Pro mode limits / Kimi 2.6 text thinking only / paid artifact limits]
 
 Models to consult:
 [insert ChatGPT / Gemini / Qwen / DeepSeek / Kimi / Metaso / selected subset]
@@ -68,7 +68,7 @@ Assign roles:
 - Gemini: divergent framing, visuals, and cross-domain alternatives.
 - Qwen: Chinese-first alternative explanation, coding/project/product angle when relevant.
 - DeepSeek: concise logic, code/math/reasoning red-team critique.
-- Kimi: long-document, PPT/artifact, and K2.6 thinking perspective within account limits.
+- Kimi: use Kimi 2.6 thinking as text-only Chinese long-document/PPT-structure consultant by default; paid PPT/document/Agent/Code/artifact features only if the user confirms membership and allows them.
 - Metaso: source discovery, evidence map, and research-report leads; do not run point-consuming Deep Research unless allowed.
 
 Ask each model for only the role-specific output needed. Keep prompts short and comparable.
@@ -91,6 +91,7 @@ Shared context:
 Rules:
 - Use only your assigned model/tab.
 - Do not disturb other model tabs or consume high-quota modes unless explicitly allowed.
+- For Kimi, default to Kimi 2.6 text-thinking only unless paid membership and artifact capability are explicitly confirmed.
 - Extract only decision-relevant points.
 - Mark uncertain facts, citations, source claims, and generated artifacts as unverified.
 - Do not oversell your model's confidence. Provide caveats and verification needs.
@@ -147,6 +148,27 @@ Focus on:
 - Ways to make the plan more interesting without overclaiming.
 
 Return concise options, not a long essay.
+```
+
+## Kimi 2.6 PPT Structure Prompt
+
+```text
+Use Kimi 2.6 thinking only. Do not trigger paid PPT, document, Agent, Code, or artifact-generation features.
+
+I need Chinese PPT structure advice for:
+[insert topic, audience, duration, and deliverable]
+
+Context:
+[insert concise project/task context]
+
+Constraints:
+[insert tone, page count, required sections, forbidden claims, evidence limits, and whether this is only a structure draft]
+
+Return:
+- Recommended slide/page structure.
+- Section logic and transition rationale.
+- 2-3 alternative narrative routes.
+- Claims or visuals that need verification before use.
 ```
 
 ## Figure, Slide, Or Storyboard Prompt
@@ -209,7 +231,7 @@ External Input
 - Gemini: [1-3 useful points]
 - Qwen: [1-3 useful points, if consulted]
 - DeepSeek: [1-3 useful points, if consulted]
-- Kimi: [1-3 useful points, if consulted]
+- Kimi: [1-3 useful points, if consulted; note whether it was Kimi 2.6 text thinking or a paid/member feature]
 - Metaso: [1-3 useful points/source leads, if consulted]
 - Visual/research artifacts if used: [what was generated or researched, and verification status]
 - Cross-model pattern: [agreement, disagreement, blind spots, and which model found what]
