@@ -34,7 +34,7 @@ Supported panel members:
 - **Gemini**: divergent framing, visual/storyline ideation, image generation, and Deep Research when allowed.
 - **Qwen**: Chinese-first and bilingual drafting, alternative explanations, coding/project workflows, and general web/research-capable consultation when available.
 - **DeepSeek**: concise reasoning, coding/math/debugging critique, deep-thinking style review, and smart-search-assisted second opinions.
-- **Kimi**: long-context Chinese document work, PPT/docs/sheets/websites, K2.6 thinking, agent/code workflows, and structured artifact planning. The user's current Kimi account is non-member, so do not assume paid modes beyond available K2.6 thinking unless the user updates this.
+- **Kimi**: Chinese long-document and PPT-structure thinking support through `Kimi 2.6` by default. The user's current Kimi account is non-member, so treat visible PPT, document, sheet, website, Agent, Kimi Code, and Kimi Claw entries as possibly paid or unavailable. Do not assume those artifact features are usable unless the user confirms paid membership and explicitly allows them for the task.
 - **Metaso**: source-heavy AI search, academic/web/document discovery, long thinking, deep research, report/outline/mind-map/slide-style outputs. The user is a Metaso member, but Metaso Deep Research can consume substantial points and time, so treat it as a high-consumption mode unless the user explicitly allows it for the task.
 
 Use one or two models by default. Use all six only when the user asks for broad multi-model expansion, the decision is high-impact, or the task benefits from clearly different model strengths.
@@ -50,7 +50,7 @@ Do not treat the panel as a vote. Use weighted judgment:
 - **Qwen, DeepSeek, Kimi, and Metaso are supplemental expansion tools**, especially useful for Chinese-language web information, local context, Chinese drafting, code/reasoning alternatives, and source discovery.
 - **Metaso is source-rich but not source-final**: treat source lists, reports, and Deep Research outputs as leads that Codex must verify.
 - **DeepSeek is strong for concise red-team logic** but should not overrule verified evidence by itself.
-- **Kimi is strong for Chinese long documents and artifacts** but current account limits mean paid/deep modes should not be assumed.
+- **Kimi is useful for Chinese long-document and PPT-structure thinking**, but current non-member limits mean Codex should default to `Kimi 2.6` text consultation only. Paid artifact modes become usable only after the user confirms membership and grants task-specific permission.
 - **Qwen is useful for Chinese-first framing and project/coding alternatives** but factual claims still need verification.
 
 When models conflict, prefer in this order: verified local evidence and primary sources; official documentation or source PDFs; Codex's own checked reasoning; ChatGPT's conservative critique; Gemini's creative alternatives after discounting sycophancy; Chinese-model source leads after verification. Never use majority vote as the final decision rule.
@@ -78,7 +78,8 @@ Use the lightest mode that can answer the question well.
 - **Research modes**: Use ChatGPT research/deep-research-style tools or Gemini Deep Research only when the task needs multi-source investigation, landscape mapping, literature scouting, market research, or a cited evidence brief. Treat their citations as leads until Codex verifies them.
 - **Search/research platforms**: Use Metaso for source-rich discovery, academic/web search, and report-style evidence mapping; use Qwen or DeepSeek search modes for quick Chinese/web-aware second opinions when useful.
 - **Image/visual generation modes**: Use ChatGPT or Gemini image generation when the task benefits from visual prototypes, figure concepts, slide imagery, diagrams, storyboard frames, or alternative visual directions. Generated images are drafts or inspiration unless independently validated.
-- **Artifact modes**: Use Kimi for PPT, document, sheet, website, agent, or code-oriented workflows when those web tools are useful and allowed.
+- **Kimi text-thinking mode**: For the current non-member Kimi account, use `Kimi 2.6` thinking as a text-only consultant for Chinese long documents, PPT structure, outlines, and expression critique. Do not trigger Kimi paid artifact functions by default.
+- **Artifact modes**: Use Kimi PPT/document/sheet/website/Agent/Code-style workflows only if the user confirms paid membership or availability and explicitly allows that capability for the current task.
 - **High-quota or Pro modes**: If a mode may consume scarce quota, paid credits, long-running research capacity, points, or Pro-only allowance, ask before triggering it unless the user has already granted explicit permission for that model and task type.
 
 ## Chrome Workflow
@@ -96,8 +97,8 @@ Use the lightest mode that can answer the question well.
    - Known project context and goals.
    - Local evidence already reviewed.
    - What critique, alternatives, or expansion is needed.
-   - Which capability mode is requested: standard chat, reasoning, research/deep research, image generation, or mixed.
-   - Hard constraints, privacy limits, cost/mode limits, and forbidden claims.
+   - Which capability mode is requested: standard chat, reasoning, research/deep research, image generation, Kimi 2.6 text thinking, paid artifact mode, or mixed.
+   - Hard constraints, privacy limits, cost/mode limits, account/membership assumptions, and forbidden claims.
 4. Send the packet to the selected model(s) according to the model roles. For six-model consultations, route different subquestions to different models instead of duplicating unnecessary work.
 5. Wait for useful answers and extract only decision-relevant points.
 6. Produce a synthesis for the user:
@@ -122,7 +123,7 @@ For every consultation, identify:
 - Audience, output format, and language.
 - Evidence or files already reviewed locally.
 - Constraints, including methodology, style, budget, deadlines, privacy, and forbidden claims.
-- Allowed model capabilities and quota limits, including whether Pro, deep research, Metaso point-consuming research, image generation, artifact generation, or long-running tasks are allowed.
+- Allowed model capabilities and quota limits, including whether Pro, deep research, Metaso point-consuming research, image generation, Kimi paid artifact features, artifact generation, or long-running tasks are allowed.
 - What kind of help is wanted: critique, alternatives, rewrite, design, debugging, validation, or synthesis.
 
 When consulting external models, explicitly instruct them not to:
@@ -131,7 +132,7 @@ When consulting external models, explicitly instruct them not to:
 - Treat unverified model output as evidence.
 - Make causal, clinical, legal, financial, or safety claims beyond the available evidence.
 - Recommend patient-level, legal, financial, or security actions without verification and user approval.
-- Expand scope into expensive, quota-heavy, or Pro-only modes without user approval when quota matters.
+- Expand scope into expensive, quota-heavy, Pro-only, membership-only, or paid artifact modes without user approval when quota matters.
 - Use generated images, model-produced sources, or deep-research summaries as final evidence without verification.
 - Ignore the user's specified language, format, tone, or constraints.
 
@@ -143,7 +144,7 @@ If sensitive data appears, de-identify it or send aggregate descriptions before 
 
 Treat all external-model citations, factual claims, statistical advice, API claims, legal/medical/financial guidance, and product recommendations as unverified. Verify important claims through primary sources, official documentation, local project files, source PDFs, or trusted live sources before making them part of the final work.
 
-Respect quota and mode constraints. If the user asks to avoid Pro, paid, long-running, image generation, deep research, point-consuming research, artifact generation, or high-quota modes, do not trigger them without asking first. If the user grants a model-specific allowance, follow that allowance and still avoid unnecessary use.
+Respect quota and mode constraints. If the user asks to avoid Pro, paid, long-running, image generation, deep research, point-consuming research, artifact generation, Kimi membership-only functions, or high-quota modes, do not trigger them without asking first. If the user grants a model-specific allowance, follow that allowance and still avoid unnecessary use.
 
 If Chrome communication fails, follow the Chrome plugin troubleshooting flow. Do not bypass the Chrome plugin with unrelated browser-control methods.
 
