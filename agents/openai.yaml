@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Consult Panel"
+  short_description: "Use Chrome to consult six AI models for critique, research, and visuals."
+  default_prompt: "Use $ai-consult-panel to get six-model critique, research, or visual ideas for this decision."
