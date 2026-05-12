@@ -85,19 +85,25 @@ Avoid using DeepSeek as:
 
 ## Kimi
 
-Trust weight: supplemental for Chinese long-context documents and artifact planning.
+Trust weight: supplemental for Chinese long-context thinking and structure critique.
 
-Observed current workspace: the user's Kimi account is non-member; K2.6 thinking is available. Sidebar exposes PPT, documents, deep research, websites, sheets, Agent cluster, Kimi Code, and Kimi Claw.
+Observed current workspace: the user's Kimi account is non-member. `Kimi 2.6` thinking is available. The sidebar exposes PPT, documents, deep research, websites, sheets, Agent cluster, Kimi Code, and Kimi Claw, but those visible entries should be treated as possibly membership-only, paid, quota-limited, or unavailable unless the user confirms otherwise.
 
-Best for:
+Best for current non-member use:
 
-- Long Chinese documents, outlines, slide/PPT planning, document restructuring, and artifact workflows.
-- K2.6 thinking for careful Chinese reasoning and structured critique within available account limits.
-- Website, sheet, agent, and code-oriented workflows when the visible Kimi tools are useful.
+- `Kimi 2.6` thinking as a text consultant for Chinese long documents, PPT structure, outlines, and expression critique.
+- Chinese narrative organization, slide logic, section hierarchy, and document restructuring suggestions.
+- Careful Chinese reasoning within available free-account limits.
+
+Best for paid-member use, only after user confirmation:
+
+- PPT, document, sheet, website, Agent, Kimi Code, Kimi Claw, or other artifact workflows that require membership or paid quota.
+- Richer long-document, artifact planning, or agent/code workflows when the user explicitly allows the relevant paid feature for the task.
 
 Avoid using Kimi as:
 
-- A paid/deep mode unless the user approves or account status changes.
+- A paid/deep/artifact mode unless the user confirms membership or availability and approves the current task.
+- A reason to assume visible UI features are actually usable on the current account.
 - The only verifier for sources, code correctness, or high-stakes claims.
 - A place to send sensitive files without de-identification and user approval.
 
@@ -142,7 +148,7 @@ When the user asks for parallel/subagent consultation, the parent Codex agent re
 - Gemini worker: divergent alternatives, visual/storyline framing, image or Deep Research mode if allowed.
 - Qwen worker: Chinese-first alternatives, coding/project/product angle, quick web-aware framing.
 - DeepSeek worker: logic, code/math, failure modes, concise red-team critique.
-- Kimi worker: long Chinese document/PPT/artifact planning and K2.6 thinking within account limits.
+- Kimi worker: `Kimi 2.6` text-thinking consultation for Chinese long-document/PPT structure by default; paid artifact tools only if the user confirms membership and allows them.
 - Metaso worker: source discovery, evidence map, report/outline/mind-map leads; do not use point-consuming Deep Research unless allowed.
 
 Use real browser parallelism only when tabs are disjoint and stable. Otherwise serialize Chrome operations and parallelize non-browser work such as prompt drafting, extracted-output analysis, verification, and synthesis. Never allow workers to make the final decision independently.
@@ -155,13 +161,13 @@ Consult only one when:
 - The question is mostly visual artifact generation: use image generation only if a generated visual is genuinely useful.
 - The question is mostly methods, accumulated project context, strict critique, code architecture, or detailed rewriting: prefer ChatGPT.
 - The question is mostly Chinese source discovery or academic/web evidence mapping: prefer Metaso, then verify sources.
-- The question is mostly Chinese long-document/PPT/artifact planning: prefer Kimi.
+- The question is mostly Chinese long-document or PPT-structure thinking and Kimi free-account limits are acceptable: prefer Kimi 2.6 text consultation.
 - The question is mostly concise code/math/logic red-team critique: prefer DeepSeek.
 - The question needs Chinese-first alternative framing or coding/project perspective: consider Qwen.
 
 ## Mode And Quota Rule
 
-Default to standard chat or lightweight reasoning. Before using Pro, deep research, long-running research, point-consuming research, image generation, artifact generation, or other quota-heavy modes, check the user's standing preference for that model. If unclear, ask first and name the tradeoff.
+Default to standard chat or lightweight reasoning. Before using Pro, deep research, long-running research, point-consuming research, image generation, artifact generation, Kimi membership-only functions, or other quota-heavy modes, check the user's standing preference for that model. If unclear, ask first and name the tradeoff.
 
 ## Synthesis Rule
 
